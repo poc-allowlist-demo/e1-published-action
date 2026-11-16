@@ -1,0 +1,11 @@
+name: e1-published-action
+description: E1 allow list test action
+inputs:
+  who:
+    description: caller
+    default: customer
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: echo "E1 action ran for ${{ inputs.who }} on $(curl -s https://api.ipify.org)"
